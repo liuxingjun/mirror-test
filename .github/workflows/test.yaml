@@ -32,4 +32,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pull
-        run: docker pull ${{ matrix.mirror }}/library/alpine
+        run: docker pull ${{ matrix.mirror }}/library/ubuntu
