@@ -32,4 +32,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pull
-        run: docker pull ${{ matrix.mirror }}/library/nginx || true
+        run: docker pull ${{ matrix.mirror }}/library/nginx || echo "::error ::Process completed with exit code 1"
