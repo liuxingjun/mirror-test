@@ -27,9 +27,10 @@ jobs:
           - docker.mirrors.ustc.edu.cn
           - mirror.gcr.io
           - dockerproxy.com
+          - mirror.ccs.tencentyun.com
     runs-on: ubuntu-latest
     steps:
       - name: info
         run: docker info
       - name: pull
-        run: time docker pull ${{ matrix.mirror }}/library/nginx:1.25.1-alpine
+        run: docker pull ${{ matrix.mirror }}/library/nginx:1.25.1-alpine
