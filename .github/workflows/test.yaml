@@ -17,6 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   test:
     strategy:
+      fail-fast: false
       matrix:
         mirror:
           - docker.io
@@ -30,7 +31,5 @@ jobs:
           - mirror.ccs.tencentyun.com
     runs-on: ubuntu-latest
     steps:
-      - name: info
-        run: docker info
       - name: pull
         run: docker pull ${{ matrix.mirror }}/library/nginx:1.25.1-alpine
