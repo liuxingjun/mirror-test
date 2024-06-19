@@ -31,5 +31,5 @@ jobs:
           - ccr.ccs.tencentyun.com
     runs-on: ubuntu-latest
     steps:
-      - name: pull
-        run: docker pull ${{ matrix.mirror }}/library/nginx ||  echo "::error title=aaa::bbb"
+      - name: pull 
+        run: msg=$(docker pull ${{ matrix.mirror }}/library/nginx --quiet 2>&1) || echo "::error ::$msg"
